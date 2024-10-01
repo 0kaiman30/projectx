@@ -1,0 +1,76 @@
+.mobile-btn {
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    width: 55px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.mobile-btn span {
+    /* display: block; */
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    position: relative;
+
+}
+
+.mobile-btn span::before,
+.mobile-btn span::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+.mobile-btn span::before {
+    top: -13px;
+}
+
+.mobile-btn span::after {
+    top: 13px;
+}
+
+/* animate burger for toggle */
+.show-mobile-btn span::before,
+.show-mobile-btn span::after {
+    top: 0;
+    bottom: 0;
+}
+
+.show-mobile-btn span::before {
+    rotate: 45deg;
+}
+
+.show-mobile-btn span::after {
+    rotate: -45deg;
+}
+
+.show-mobile-btn span {
+    background: transparent;
+}
+
+/* animate burger for toggle */
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    /* scale: 0; */
+    transition: 0.3s ease;
+}
+
+.show-backdrop {
+    opacity: 1;
+    visibility: visible;
+    /* scale: 1; */
+}
